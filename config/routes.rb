@@ -1,4 +1,8 @@
 Tweetbeetz::Application.routes.draw do
+  resources :beats
+  root :to => 'beats#index'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

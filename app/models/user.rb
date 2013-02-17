@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :twitter_sign_up
-  has_many :tweets
+  has_many :tweets, :order => 'tweeted_at DESC'
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
@@ -22,9 +22,16 @@ class User < ActiveRecord::Base
     client = Twitter::Client.new(oauth_token: oauth_token,
                                  oauth_token_secret: oauth_token_secret)
     client.user_timeline(username)[0..4].each do |tweet|
-      Tweet.create(html: client.oembed(tweet.id, omit_script: true).html,
+      Tweet.create(html: client.oembed(
+                     tweet.id,
+                     omit_script: true,
+                     hide_media: true,
+                     hide_thread: true
+                   ).html,
                    text: tweet.text,
-                   user_id: id)
+                   user_id: id,
+                   unique_id: tweet.id,
+                   tweeted_at: tweet.created_at)
     end
   end
 

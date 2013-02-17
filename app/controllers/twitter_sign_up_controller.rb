@@ -2,10 +2,11 @@ class CallbackController < ApplicationController
 
   def create
     user = User.from_omniauth(request.env["omniauth.auth"])
+
     if user.persisted?
-      sign_in_and_redirect user, notice: "Success!"
+      sign_in_and_redirect user
     else
-      redirect_to root_path, error: "Couldn't sign you up..."
+      redirect_to root_path
     end
   end
 

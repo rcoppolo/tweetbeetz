@@ -4,8 +4,11 @@ class TweetsController < ApplicationController
 
   def index
     if current_user
-      current_user.get_latest_tweets
-      @tweets = current_user.tweets[0..4]
+      if current_user.tweets.none? ||
+         current_user.tweets.first.created_at < 30.minutes.ago # fixme
+        current_user.get_latest_tweets
+      end
+      @tweets = current_user.tweets(true)[0..4]
     else
       render "connect"
     end

@@ -1,4 +1,8 @@
 <% current_url = url_for(only_path: false) %>
+<div class='form'>
+  <input type="text" name="username" value="<%= @tweet.username %>"></input>
+  <a class="radius button get_another_tweet" href="#">Get A Tweet</a>
+</div>
 <div class='tweet'>
   <div class='embed'>
     <%= raw @tweet.html %>

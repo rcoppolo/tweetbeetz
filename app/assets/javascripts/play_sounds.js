@@ -17,7 +17,8 @@ var playAll = function (urls_with_volumes) {
     max = Math.max.apply(Math, raw_volumes);
     min = Math.min.apply(Math, raw_volumes);
     boost = 1 - max;
-    if (min < 0.1) return raw_volumes;
+    if (min < 0.01) return raw_volumes;
+
     for (var i = 0; i < raw_volumes.length; i++) {
       diff_max = max - raw_volumes[i];
       diff_min = min - raw_volumes[i];

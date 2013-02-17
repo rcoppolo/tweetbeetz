@@ -15,6 +15,7 @@ gem 'sqlite3'
 group :development do
   gem "better_errors", "~> 0.3"
   gem "binding_of_caller", "~> 0.6"
+  gem "pry-rails"
 end
 
 
@@ -33,6 +34,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+gem "freesound-ruby", git: "git@github.com:rf-/freesound-ruby"
+gem "tweet_to_sounds", git: "git@github.com:rf-/tweet_to_sounds"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

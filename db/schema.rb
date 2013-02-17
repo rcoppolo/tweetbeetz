@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130217203407) do
+ActiveRecord::Schema.define(:version => 20130217204154) do
 
   create_table "beats", :force => true do |t|
     t.string   "name"
@@ -21,14 +21,14 @@ ActiveRecord::Schema.define(:version => 20130217203407) do
   end
 
   create_table "tweets", :force => true do |t|
-    t.string   "text"
-    t.string   "html"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "urls"
     t.time     "tweeted_at"
     t.string   "username"
     t.string   "unique_id"
+    t.text     "text"
+    t.text     "html"
+    t.text     "urls"
   end
 
   add_index "tweets", ["unique_id"], :name => "index_tweets_on_unique_id"

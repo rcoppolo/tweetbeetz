@@ -3,4 +3,6 @@
     <%= raw @tweet.html %>
   </div>
   <a href="#" class="play" data-id="<%= @tweet.id %>"><%= image_tag("load.gif")%></a>
+  </br>
+  <h3> <%= link_to "Next", show_for_user_url(current_user.username), class: "next-link" %> </h3>
 </div>

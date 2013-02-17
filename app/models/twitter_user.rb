@@ -33,5 +33,7 @@ class TwitterUser < ActiveRecord::Base
       tweet.tweeted_at = tweet_data.created_at
       tweet.save!
     end
+
+    update_attribute :last_checked, Time.now
   end
 end

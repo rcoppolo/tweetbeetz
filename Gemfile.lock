@@ -5,13 +5,6 @@ GIT
     freesound-ruby (0.0.1)
       crack
 
-GIT
-  remote: git@github.com:rf-/tweet_to_sounds
-  revision: 80edd89af5543cf433dd588ef564faf60eb07a7b
-  specs:
-    tweet_to_sounds (0.0.1)
-      freesound-ruby
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -200,7 +193,6 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sqlite3
   thin
-  tweet_to_sounds!
   twitter
   uglifier (>= 1.0.3)
   zurb-foundation

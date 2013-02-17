@@ -30,10 +30,9 @@
     <%- if current_user %>
       <p>Welcome <%= current_user.username %>!</p>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    <%- else %>
-      <%= link_to "Connect with Twitter!", "/users/auth/twitter" %>
     <% end %>
     <%= yield %>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 </body>
 </html>

@@ -5,7 +5,7 @@
   </div>
   <a href="#" class="play" data-id="<%= @tweet.id %>"><%= image_tag("load.gif")%></a>
   </br>
-  <h3> <%= link_to "Next", show_for_user_url(current_user.username), class: "next-link" %> </h3>
+  <h3> <%= link_to "Next", show_for_user_url(@tweet.username), class: "next-link" %> </h3>
   <p class="permalink"> <strong id="permalink-header">Permalink: </strong>
     <%= link_to current_url, current_url %>
   </p>

@@ -1,7 +1,10 @@
 <h3>Your latest tweets:</h3>
 
 <% @tweets.each do |tweet| %>
-  <div>
-    <%= tweet.html.html_safe %>
+  <div class='tweet'>
+    <a href="#" class="play" data-id="<%= tweet.id %>">Play</a>
+    <div>
+      <%= tweet.html.html_safe %>
+    </div>
   </div>
 <% end %>

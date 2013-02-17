@@ -10,7 +10,7 @@ module TweetToSounds
   class << self
     def sounds_for_tweet(tweet)
       keywords = KeywordExtractor.new(tweet).keywords
-      sounds   = SoundFinder.new(keywords).urls
+      sounds   = SoundFinder.new(keywords).sounds
       urls     = sounds.map(&:preview_hq_mp3)
 
       urls

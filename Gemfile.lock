@@ -1,13 +1,11 @@
-GIT
-  remote: git@github.com:rf-/freesound-ruby
-  revision: c98082725caa2910b3e0e87a2274e3b4f84b39f8
+PATH
+  remote: vendor/private_gems/freesound-ruby-0.0.1
   specs:
     freesound-ruby (0.0.1)
       crack
 
-GIT
-  remote: git@github.com:rf-/tweet_to_sounds
-  revision: 80edd89af5543cf433dd588ef564faf60eb07a7b
+PATH
+  remote: vendor/private_gems/tweet_to_sounds-0.0.1
   specs:
     tweet_to_sounds (0.0.1)
       freesound-ruby

@@ -2,9 +2,9 @@ $ ->
   $('.tweet').on('click', '.play', (e) ->
     e.preventDefault()
     link = $(this)
-    link.text('Loading...')
+    link.html('<img class="loader" src="/assets/load.gif" />')
     $.post("/sounds", { id: $(this).data('id') }, (data) ->
       playAll(data)
-      link.text('Play')
+      link.html('<img src="/assets/play.png" />')
     )
   )

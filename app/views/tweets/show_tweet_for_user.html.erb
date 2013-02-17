@@ -1,6 +1,6 @@
 <div class='tweet'>
-  <a href="#" class="play" data-id="<%= @tweet.id %>">Play</a>
-  <div>
+  <div class='embed four'>
     <%= raw @tweet.html %>
   </div>
+  <a href="#" class="play" data-id="<%= @tweet.id %>"><%= image_tag("play.png")%></a>
 </div>

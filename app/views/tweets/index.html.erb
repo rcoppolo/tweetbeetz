@@ -2,9 +2,9 @@
 
 <% @tweets.each do |tweet| %>
   <div class='tweet'>
-    <a href="#" class="play" data-id="<%= tweet.id %>">Play</a>
-    <div>
+    <div class='four embed'>
       <%= tweet.html.html_safe %>
     </div>
+    <a href="#" class="play" data-id="<%= tweet.id %>"><%= image_tag("play.png")%></a>
   </div>
 <% end %>

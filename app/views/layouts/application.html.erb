@@ -35,9 +35,12 @@
       <%= yield %>
       <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
+  </div>
+  <div class="footer">
     <%- if current_user %>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "logout"%>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %> &nbsp;&bull;&nbsp;
     <% end %>
+    Made by <%= credit_links %>.
   </div>
 </body>
 </html>

@@ -13,4 +13,11 @@ $ ->
 
   $('.get_another_tweet').on 'click', (e) ->
     e.preventDefault()
-    document.location = '/' + $('input[name=username]').val()
+    document.location = '/' + $('.username_input').val()
+
+  $('.username_input').on 'keyup', (e) ->
+    if (e.keyCode == 13)
+      e.preventDefault()
+      document.location = '/' + $('.username_input').val()
+
+  $('.username_input').focus().val($('.username_input').val())

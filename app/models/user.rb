@@ -24,7 +24,8 @@ class User < ActiveRecord::Base
     client.user_timeline(username)[0..4].each do |tweet|
       Tweet.create(html: client.oembed(tweet.id, omit_script: true).html,
                    text: tweet.text,
-                   user_id: id)
+                   user_id: id,
+                   unique_id: tweet.id)
     end
   end
 

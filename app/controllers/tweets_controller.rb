@@ -10,7 +10,19 @@ class TweetsController < ApplicationController
     twitter_user = TwitterUser.find_or_create_by_username(params[:username])
     twitter_user.update_tweets(twitter_credentials)
 
-    tweet = twitter_user.random_tweet
+    tweet = nil
+
+    loop do
+      tweet = twitter_user.random_tweet
+
+      if tweet.urls.nil?
+        urls = TweetToSounds.sounds_for_tweet(tweet.text)
+        tweet.urls = urls.join(" ")
+        tweet.save
+      end
+
+      break unless tweet.urls == ""
+    end
 
     redirect_to show_tweet_for_user_url(twitter_user.username, tweet.unique_id)
   end

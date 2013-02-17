@@ -1,17 +1,22 @@
 class TweetsController < ApplicationController
-
   respond_to :json, only: :sounds
+  before_filter :must_be_logged_in
 
   def index
-    if current_user
-      if current_user.tweets.none? ||
-         current_user.tweets.first.created_at < 30.minutes.ago # fixme
-        current_user.get_latest_tweets
-      end
-      @tweets = current_user.tweets(true)[0..4]
-    else
-      render "connect"
-    end
+    redirect_to show_for_user_url(current_user.username)
+  end
+
+  def show_for_user
+    twitter_user = TwitterUser.find_or_create_by_username(params[:username])
+    twitter_user.update_tweets(twitter_credentials)
+
+    tweet = twitter_user.random_tweet
+
+    redirect_to show_tweet_for_user_url(twitter_user.username, tweet.unique_id)
+  end
+
+  def show_tweet_for_user
+    @tweet = Tweet.find_by_unique_id(params[:tweet_id])
   end
 
   def sounds
@@ -25,4 +30,18 @@ class TweetsController < ApplicationController
     end
   end
 
+  protected
+
+  def must_be_logged_in
+    if !current_user
+      render "connect"
+    end
+  end
+
+  def twitter_credentials
+    {
+      oauth_token: current_user.oauth_token,
+      oauth_token_secret: current_user.oauth_token_secret
+    }
+  end
 end

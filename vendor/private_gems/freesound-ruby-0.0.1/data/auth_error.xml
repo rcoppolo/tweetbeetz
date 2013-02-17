@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<response>
+  <status_code>401</status_code>
+  <explanation>Please include your api key as the api_key GET parameter</explanation>
+  <type>AuthenticationError</type>
+  <error>True</error>
+</response>

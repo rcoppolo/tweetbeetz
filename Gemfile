@@ -10,7 +10,10 @@ gem 'omniauth-twitter'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :development do
+  gem 'sqlite3'
+end
+gem 'pg'
 
 group :development do
   gem "better_errors", "~> 0.3"
@@ -35,8 +38,8 @@ end
 
 gem 'jquery-rails'
 
-gem "freesound-ruby", git: "git@github.com:rf-/freesound-ruby"
-gem "tweet_to_sounds", git: "git@github.com:rf-/tweet_to_sounds"
+gem "freesound-ruby", path: "vendor/private_gems/freesound-ruby-0.0.1"
+gem "tweet_to_sounds", path: "vendor/private_gems/tweet_to_sounds-0.0.1"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

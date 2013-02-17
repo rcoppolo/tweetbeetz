@@ -1,0 +1,6 @@
+{
+    "status_code": 401, 
+    "explanation": "Please include your api key as the api_key GET parameter", 
+    "type": "AuthenticationError", 
+    "error": true
+}

@@ -1,0 +1,4 @@
+error: true,
+explanation: Please include your api key as the api_key GET parameter,
+status_code: 401,
+type: AuthenticationError

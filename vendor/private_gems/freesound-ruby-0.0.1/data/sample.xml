@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<response>
+  <similarity>http://www.freesound.org/api/sounds/10/similar/</similarity>
+  <num_ratings>12</num_ratings>
+  <duration>5.54</duration>
+  <samplerate>44100.0</samplerate>
+  <preview-hq-ogg>http://www.freesound.org/data/previews/0/10_43-hq.ogg</preview-hq-ogg>
+  <id>10</id>
+  <preview-lq-ogg>http://www.freesound.org/data/previews/0/10_43-lq.ogg</preview-lq-ogg>
+  <bitdepth>16</bitdepth>
+  <num_comments>3</num_comments>
+  <filesize>489494</filesize>
+  <preview-hq-mp3>http://www.freesound.org/data/previews/0/10_43-hq.mp3</preview-hq-mp3>
+  <type>wav</type>
+  <analysis_stats>http://www.freesound.org/api/sounds/10/analysis/</analysis_stats>
+  <description>test description</description>
+  <tags>
+    <resource>transformation</resource>
+    <resource>speech</resource>
+    <resource>voice</resource>
+    <resource>plane</resource>
+    <resource>morph</resource>
+  </tags>
+  <serve>http://www.freesound.org/api/sounds/10/serve/</serve>
+  <spectral_m>http://www.freesound.org/data/displays/0/10_43_spec_M.jpg</spectral_m>
+  <spectral_l>http://www.freesound.org/data/displays/0/10_43_spec_L.jpg</spectral_l>
+  <user>
+    <username>xserra</username>
+    <url>http://www.freesound.org/people/xserra/</url>
+    <ref>http://www.freesound.org/api/people/xserra/</ref>
+  </user>
+  <bitrate>705</bitrate>
+  <num_downloads>345</num_downloads>
+  <analysis_frames>http://www.freesound.org/data/analysis/0/10_43_frames.json</analysis_frames>
+  <channels>1</channels>
+  <license>http://creativecommons.org/licenses/by/3.0/</license>
+  <created>2005-03-09 10:47:33</created>
+  <url>http://www.freesound.org/people/xserra/sounds/10/</url>
+  <ref>http://www.freesound.org/api/sounds/10/</ref>
+  <avg_rating>6.83</avg_rating>
+  <preview-lq-mp3>http://www.freesound.org/data/previews/0/10_43-lq.mp3</preview-lq-mp3>
+  <original_filename>voice-plane-morphing.wav</original_filename>
+  <waveform_l>http://www.freesound.org/data/displays/0/10_43_wave_L.png</waveform_l>
+  <waveform_m>http://www.freesound.org/data/displays/0/10_43_wave_M.png</waveform_m>
+  <pack>http://www.freesound.org/api/packs/5103/</pack>
+</response>

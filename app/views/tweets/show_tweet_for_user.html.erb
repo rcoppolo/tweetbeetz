@@ -1,15 +1,14 @@
 <% current_url = url_for(only_path: false) %>
 <div class='form'>
   <input type="text" name="username" value="<%= @tweet.username %>"></input>
-  <a class="radius button get_another_tweet" href="#">Get A Tweet</a>
+  <a class="radius button get_another_tweet" href="#">Hear A Tweet</a>
 </div>
 <div class='tweet'>
   <div class='embed'>
     <%= raw @tweet.html %>
   </div>
-  <a href="#" class="play" data-id="<%= @tweet.id %>"><%= image_tag("load.gif")%></a>
+  <a href="#" class="play" data-id="<%= @tweet.id %>"><%= image_tag("load.gif") %></a>
   </br>
-  <h3> <%= link_to "Next", show_for_user_url(@tweet.username), class: "next-link" %> </h3>
   <p class="permalink"> <strong id="permalink-header">Permalink: </strong>
     <%= link_to current_url, current_url %>
   </p>

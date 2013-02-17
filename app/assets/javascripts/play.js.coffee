@@ -12,4 +12,5 @@ $ ->
   $('.tweet .play').click()
 
   $('.get_another_tweet').on 'click', (e) ->
+    e.preventDefault()
     document.location = '/' + $('input[name=username]').val()

@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   respond_to :json, only: :sounds
-  before_filter :must_be_logged_in
+  before_filter :must_be_logged_in, except: [:show_tweet_for_user]
 
   def index
     redirect_to show_for_user_url(current_user.username)
@@ -29,6 +29,10 @@ class TweetsController < ApplicationController
 
   def show_tweet_for_user
     @tweet = Tweet.find_by_unique_id(params[:tweet_id])
+
+    if @tweet.nil?
+      redirect_to "/"
+    end
   end
 
   def sounds

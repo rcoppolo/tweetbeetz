@@ -8,3 +8,5 @@ $ ->
       link.text('Play')
     )
   )
+
+  $('.tweet .play').click()

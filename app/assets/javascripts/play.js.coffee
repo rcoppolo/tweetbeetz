@@ -8,3 +8,5 @@ $ ->
       link.html('<img src="/assets/play.png" />')
     )
   )
+
+  $('.tweet .play').click()

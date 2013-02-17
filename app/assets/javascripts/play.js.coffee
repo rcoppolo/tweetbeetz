@@ -15,9 +15,9 @@ $ ->
     e.preventDefault()
     document.location = '/' + $('.username_input').val()
 
-  $('.username_input').on 'keyup', (e) ->
-    if (e.keyCode == 13)
-      e.preventDefault()
-      document.location = '/' + $('.username_input').val()
+  #$('.username_input').on 'keyup', (e) ->
+  #  if (e.keyCode == 13)
+  #    e.preventDefault()
+  #    document.location = '/' + $('.username_input').val()
 
   $('.username_input').focus().val($('.username_input').val())

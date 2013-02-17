@@ -1,39 +1,39 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <title>Tweetbeetz</title>
+  <meta charset="utf-8" />
+
+  <!-- Uncomment to make IE8 render like IE7 -->
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+  <!-- Included CSS Files -->
+  <%= stylesheet_link_tag    "application" %>
+
+  <!-- Included JS Files  -->
   <%= javascript_include_tag "application" %>
+
   <%= csrf_meta_tags %>
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
 </head>
 <body>
-  <div class="container">
-    <div class="sixteen columns">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%- if current_user %>
-        <p>Welcome <%= current_user.username %>!</p>
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-      <%- else %>
-        <%= link_to "Connect with Twitter!", "/users/auth/twitter" %>
-      <% end %>
-      <%= yield %>
-    </div>
+  <div class="twelve columns">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%- if current_user %>
+      <p>Welcome <%= current_user.username %>!</p>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <%- else %>
+      <%= link_to "Connect with Twitter!", "/users/auth/twitter" %>
+    <% end %>
+    <%= yield %>
   </div>
-
 </body>
 </html>

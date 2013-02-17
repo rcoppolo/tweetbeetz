@@ -3,13 +3,19 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.12'
 
 gem 'thin'
-
+gem 'devise'
 gem 'twitter'
+gem 'omniauth-twitter'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+
+group :development do
+  gem "better_errors", "~> 0.3"
+  gem "binding_of_caller", "~> 0.6"
+end
 
 
 # Gems used only for assets and not required

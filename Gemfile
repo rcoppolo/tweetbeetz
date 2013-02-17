@@ -38,8 +38,8 @@ end
 
 gem 'jquery-rails'
 
-gem "freesound-ruby", git: "git@github.com:rf-/freesound-ruby"
-gem "tweet_to_sounds", git: "git@github.com:rf-/tweet_to_sounds"
+gem "freesound-ruby", git: "https://github.com/rf-/freesound-ruby.git"
+gem "tweet_to_sounds", git: "https://github.com/rf-/tweet_to_sounds.git"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

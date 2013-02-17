@@ -24,18 +24,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="header">
-    <%= image_tag("bird.png", width: 200) %>
-    <h1>Tweet Concréte</h1>
-  </div>
-  <div class="twelve columns">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <%- if current_user %>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    <% end %>
+  <div class="container eight columns">
+    <div class="header">
+      <%= image_tag("bird.png", width: 200) %>
+      <h1>Tweet Concréte</h1>
+    </div>
+    <div class="inner">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <%- if current_user %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <% end %>
+    </div>
   </div>
 </body>
 </html>

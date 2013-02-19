@@ -51,7 +51,7 @@
     <%- if current_user %>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete %> &nbsp;&bull;&nbsp;
     <% end %>
-    Made by <%= credit_links %>.
+    Made by <%= credit_links %> with <%= link_to "freesound", "http://www.freesound.org/" %>.
   </div>
 </body>
 </html>

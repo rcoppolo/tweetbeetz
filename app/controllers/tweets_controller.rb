@@ -15,6 +15,11 @@ class TweetsController < ApplicationController
     loop do
       tweet = twitter_user.random_tweet
 
+      if tweet.nil?
+        render 'no_tweets_for_user'
+        return
+      end
+
       if tweet.urls.nil?
         urls = TweetToSounds.sounds_for_tweet(tweet.text)
         tweet.urls = urls.join(" ")
@@ -25,6 +30,8 @@ class TweetsController < ApplicationController
     end
 
     redirect_to show_tweet_for_user_url(twitter_user.username, tweet.unique_id)
+  rescue Twitter::Error::NotFound
+    render 'user_not_found'
   end
 
   def show_tweet_for_user

@@ -1,0 +1,10 @@
+<div class='form'>
+  <input type="text" name="username" class="username_input" value="<%= params[:username] %>"></input>
+  <a class="radius button get_another_tweet" href="#">Hear A Tweet</a>
+</div>
+<div class='tweet'>
+  <div class='no_tweets'>
+    Sorry, the user <b>@<%= params[:username] %></b> doesn't exist.
+    Please try another username.
+  </div>
+</div>

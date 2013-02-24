@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require_tree .
+//= require soundjs-0.4.0.min
+//= require soundjs.flashplugin-0.4.0.min.js
+//= require play_sounds
+//= require play

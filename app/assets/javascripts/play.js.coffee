@@ -1,4 +1,7 @@
 $ ->
+  createjs.FlashPlugin.BASE_PATH = "/"
+  createjs.Sound.registerPlugins([createjs.WebAudioPlugin, createjs.FlashPlugin])
+
   $('.tweet').on('click', '.play', (e) ->
     e.preventDefault()
     link = $(this)
@@ -14,10 +17,5 @@ $ ->
   $('.get_another_tweet').on 'click', (e) ->
     e.preventDefault()
     document.location = '/' + $('.username_input').val()
-
-  #$('.username_input').on 'keyup', (e) ->
-  #  if (e.keyCode == 13)
-  #    e.preventDefault()
-  #    document.location = '/' + $('.username_input').val()
 
   $('.username_input').focus().val($('.username_input').val())
